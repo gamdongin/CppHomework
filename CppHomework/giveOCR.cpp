@@ -3,6 +3,8 @@
 
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
+// cmd에서 pip install google-genai 입력
+// 
 // 위 두 헤더가 인식이 안 되면 cmd 에서
 //
 // git clone https://github.com/microsoft/vcpkg
@@ -19,18 +21,21 @@
 void giveOCR(const char* imagePath)
 {
     tesseract::TessBaseAPI ocr;
-    if (ocr.Init("./tessdata","jpn+eng"))
+
+    const char* tessdataPath = "./tessdata/";
+
+    if (ocr.Init(tessdataPath, "jpn+eng"))
     {
-        std::cout
-            << "OCR 초기화 실패\n";
+        std::cout << "OCR 초기화 실패\n";
         return;
     }
 
     Pix* image = pixRead(imagePath);
+
     if (!image)
     {
-        std::cout
-            << "이미지 로드 실패\n";
+        std::cout << "이미지 로드 실패\n";
+        ocr.End();
         return;
     }
 
@@ -38,7 +43,10 @@ void giveOCR(const char* imagePath)
 
     char* text = ocr.GetUTF8Text();
 
+    std::cout << "\n===== OCR 결과 =====\n";
     std::cout << text << std::endl;
+    std::cout << "====================\n";
+
     delete[] text;
     pixDestroy(&image);
     ocr.End();

@@ -21,6 +21,12 @@
     <ClCompile Include="giveOCR.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="imgSave.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgChap.h">
@@ -31,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="tranc_run.cpp">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="imgSave.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -128,10 +128,13 @@
   <ItemGroup>
     <ClCompile Include="giveOCR.cpp" />
     <ClCompile Include="imgChap.cpp" />
+    <ClCompile Include="imgSave.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="giveOCR.h" />
     <ClInclude Include="imgChap.h" />
+    <ClInclude Include="imgSave.h" />
     <ClInclude Include="tranc_run.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
