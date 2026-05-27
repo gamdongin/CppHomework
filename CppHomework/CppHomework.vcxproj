@@ -135,7 +135,14 @@
     <ClInclude Include="giveOCR.h" />
     <ClInclude Include="imgChap.h" />
     <ClInclude Include="imgSave.h" />
-    <ClInclude Include="tranc_run.cpp" />
+    <ClCompile Include="tranc_run.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tessdata\eng.traineddata" />
+    <None Include="tessdata\jpn.traineddata" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

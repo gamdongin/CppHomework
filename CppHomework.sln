@@ -7,6 +7,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppHomework", "CppHomework\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		CppHomework\tessdata\eng.traineddata = CppHomework\tessdata\eng.traineddata
+		CppHomework\tessdata\jpn.traineddata = CppHomework\tessdata\jpn.traineddata
+		CppHomework\setup.bat = CppHomework\setup.bat
+		vcpkg.json = vcpkg.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tessdata", "tessdata", "{C8D5274F-AC00-46C7-1F8D-E88E81087A52}"
+	ProjectSection(SolutionItems) = preProject
 		CppHomework\tessdata\eng.traineddata = CppHomework\tessdata\eng.traineddata
 		CppHomework\tessdata\jpn.traineddata = CppHomework\tessdata\jpn.traineddata
 	EndProjectSection
@@ -30,6 +39,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8D5274F-AC00-46C7-1F8D-E88E81087A52} = {2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE0C7039-5C7C-4BD5-BC70-CA74FB81865C}

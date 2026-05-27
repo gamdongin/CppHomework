@@ -3,8 +3,7 @@
 
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
-// cmd에서 pip install google-genai 입력
-// 
+
 // 위 두 헤더가 인식이 안 되면 cmd 에서
 //
 // git clone https://github.com/microsoft/vcpkg

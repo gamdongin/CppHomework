@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="tessdata">
+      <UniqueIdentifier>{c1120f4b-ec55-4d1c-adec-2bafdd26e5e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgChap.cpp">
@@ -27,6 +30,9 @@
     <ClCompile Include="imgSave.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="tranc_run.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgChap.h">
@@ -35,11 +41,19 @@
     <ClInclude Include="giveOCR.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="tranc_run.cpp">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="imgSave.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tessdata\jpn.traineddata">
+      <Filter>tessdata</Filter>
+    </None>
+    <None Include="tessdata\eng.traineddata">
+      <Filter>tessdata</Filter>
+    </None>
   </ItemGroup>
 </Project>
