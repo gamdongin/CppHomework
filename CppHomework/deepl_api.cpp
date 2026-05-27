@@ -12,10 +12,6 @@ using namespace std;
 
 using json = nlohmann::json;
 
-// ?? 여기에 네 API 키 입력
-static const std::string API_KEY =
-"여기에_API_키";
-
 static size_t WriteCallback(
     void* contents,
     size_t size,
@@ -30,7 +26,7 @@ static size_t WriteCallback(
     return size * nmemb;
 }
 
-std::string translateWithDeepL(const std::string& text) {
+string translateWithDeepL(const string& text, const string& targetLang, const string API_KEY) {
 
     CURL* curl = curl_easy_init();
 
@@ -57,7 +53,7 @@ std::string translateWithDeepL(const std::string& text) {
 
     std::string postFields =
         "text=" + std::string(escaped) +
-        "&target_lang=KO";
+        "&target_lang=" + targetLang;
 
     curl_free(escaped);
 
@@ -104,6 +100,11 @@ std::string translateWithDeepL(const std::string& text) {
 
     CURLcode res = curl_easy_perform(curl);
 
+    long httpCode = 0;
+    curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &httpCode);
+    std::cout << "HTTP CODE: " << httpCode << std::endl;
+    std::cout << "RAW RESPONSE:\n" << response << std::endl;
+
     if (res != CURLE_OK) {
 
         curl_slist_free_all(headers);
@@ -124,7 +125,6 @@ std::string translateWithDeepL(const std::string& text) {
 
     }
     catch (...) {
-
-        return "JSON PARSE FAILED";
+        return "JSON PARSE FAILED:\n" + response;
     }
 }

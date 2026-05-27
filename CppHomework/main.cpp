@@ -1,13 +1,20 @@
 #include <iostream>
 #include "deepl_api.h"
+using namespace std;
 
 int main() {
-    std::string text;
 
-    std::cout << "번역할 문장 입력: ";
-    std::getline(std::cin, text);
+    string text;
+	string deeplAPI;
 
-    std::cout << translateWithDeepL(text, "eng") << std::endl;
+	cout << "DeepL API 키 입력: ";
+    cin >> deeplAPI;
+    cin.ignore((numeric_limits<streamsize>::max)(), '\n');
+
+    cout << "번역할 문장 입력: ";
+    getline(cin, text);
+
+    cout << translateWithDeepL(text, "EN", deeplAPI) << endl;
 
     return 0;
 }
