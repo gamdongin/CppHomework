@@ -1,5 +1,7 @@
 {
   "dependencies": [
-    "tesseract"
+    "tesseract",
+    "curl",
+    "nlohmann-json"
   ]
 }

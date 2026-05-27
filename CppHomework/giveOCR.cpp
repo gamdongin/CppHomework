@@ -1,5 +1,6 @@
 #include "giveOCR.h"
 #include <iostream>
+#include <string>
 
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
@@ -17,16 +18,16 @@
 // CppHomework 을 우 클릭 후 빌드 이벤트 찾아서 빌드 후 이벤트에 아래 명령어를 입력하면 됩니다.
 // xcopy /E /I /Y "$(ProjectDir)tessdata" "$(OutDir)tessdata"
 
-void giveOCR(const char* imagePath)
+std::string giveOCR(const char* imagePath, const char* lang)
 {
     tesseract::TessBaseAPI ocr;
 
     const char* tessdataPath = "./tessdata/";
 
-    if (ocr.Init(tessdataPath, "jpn+eng"))
+    if (ocr.Init("./tessdata/", lang))
     {
         std::cout << "OCR 초기화 실패\n";
-        return;
+        return "===============================";
     }
 
     Pix* image = pixRead(imagePath);
@@ -35,7 +36,7 @@ void giveOCR(const char* imagePath)
     {
         std::cout << "이미지 로드 실패\n";
         ocr.End();
-        return;
+        return "===============================";
     }
 
     ocr.SetImage(image);
@@ -49,4 +50,6 @@ void giveOCR(const char* imagePath)
     delete[] text;
     pixDestroy(&image);
     ocr.End();
+
+	return text;
 }

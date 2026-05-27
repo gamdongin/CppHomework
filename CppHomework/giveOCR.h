@@ -1,3 +1,4 @@
 #pragma once
+#include <string>
 
-void giveOCR(const char* imagePath);
+std::string giveOCR(const char* imagePath, const char* lang);
