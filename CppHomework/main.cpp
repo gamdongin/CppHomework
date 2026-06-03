@@ -1,20 +1,24 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "deepl_api.h"
 using namespace std;
 
+#include <windows.h>
+
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
 
     string text;
 	string deeplAPI;
 
-	cout << "DeepL API Å° ÀÔ·Â: ";
+	cout << u8"DeepL API í‚¤ ìž…ë ¥: ";
     cin >> deeplAPI;
     cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 
-    cout << "¹ø¿ªÇÒ ¹®Àå ÀÔ·Â: ";
+    cout << u8"ë²ˆì—­í•  ë¬¸ìž¥ ìž…ë ¥: ";
     getline(cin, text);
 
-    cout << translateWithDeepL(text, "EN", deeplAPI) << endl;
+    cout << translateWithDeepL(text, "KO", deeplAPI) << endl;
 
     return 0;
 }

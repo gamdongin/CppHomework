@@ -1,4 +1,4 @@
-#include "imgChap.h"
+ï»¿#include "imgChap.h"
 #include "imgSave.h"
 #include <windows.h>
 #include <gdiplus.h>
@@ -100,7 +100,7 @@ bool startScreenCaptureAndSave(const wchar_t* filename)
 {
     startScreenClip();
 
-    std::cout << "Ä¸ÃÄÇÒ ¿µ¿ªÀ» ¼±ÅÃÇÑ µÚ Enter¸¦ ´©¸£¼¼¿ä.\n";
+    std::cout << "ìº¡ì³í•  ì˜ì—­ì„ ì„ íƒí•œ ë’¤ Enterë¥¼ ëˆ„ë¥´ì„¸ìš”.\n";
     std::cin.get();
 
     return saveClipboardImage(filename);

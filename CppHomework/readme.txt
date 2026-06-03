@@ -1,15 +1,21 @@
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
 
-// 위 두 헤더가 인식이 안 되면 cmd 에서
+// 위 두 헤더가 인식이 안 되면
 
-git clone https://github.com/microsoft/vcpkg
-cd vcpkg
-bootstrap-vcpkg.bat
-vcpkg install tesseract:x64-windows
-vcpkg integrate install
+//setup.bat 를 더블 클릭해 실행 하십시오.
+//작업완료까지 15분 정도 걸립니다.
+	이 부분 특히 오래 걸림
+Downloading jom_1_1_7.zip, trying https://download.qt.io/official_releases/jom/jom_1_1_7.zip
+Successfully downloaded jom_1_1_7.zip
+-- Prerunning x64-windows-dbg
+-- Building x64-windows-dbg
+	오류가 아니니 종료하지 마십시오.
 
-// 각각 순서대로 시행하면 됩니다.
+오류인 경우
+error:building openssl:x64-windows failed
 
-// CppHomework 을 우 클릭 후 빌드 이벤트 찾아서 빌드 후 이벤트에 아래 명령어를 입력하면 됩니다.
-// xcopy /E /I /Y "$(ProjectDir)tessdata" "$(OutDir)tessdata"
+CMake Error
+
+vcpkg 출력 버퍼로 인해 엔터키를 친뒤 갑자기 진행되는 경우가 있습니다.
+이미 진행되었던것이 한번에 보일 뿐이고 엔터키를 쳐야 진행도는 것은 아닙니다.

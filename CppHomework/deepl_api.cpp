@@ -1,4 +1,4 @@
-// deepl_api.cpp
+ï»¿// deepl_api.cpp
 
 #include "deepl_api.h"
 
@@ -41,10 +41,10 @@ string translateWithDeepL(const string& text, const string& targetLang, const st
         "https://api-free.deepl.com/v2/translate"
     );
 
-    // POST »ç¿ë
+    // POST ì‚¬ìš©
     curl_easy_setopt(curl, CURLOPT_POST, 1L);
 
-    // UTF-8 ¹®ÀÚ¿­ URL ÀÎÄÚµù
+    // UTF-8 ë¬¸ìì—´ URL ì¸ì½”ë”©
     char* escaped = curl_easy_escape(
         curl,
         text.c_str(),
@@ -63,7 +63,7 @@ string translateWithDeepL(const string& text, const string& targetLang, const st
         postFields.c_str()
     );
 
-    // Çì´õ
+    // í—¤ë”
     struct curl_slist* headers = nullptr;
 
     std::string authHeader =
@@ -85,7 +85,7 @@ string translateWithDeepL(const string& text, const string& targetLang, const st
         headers
     );
 
-    // ÀÀ´ä ¹Ş±â
+    // ì‘ë‹µ ë°›ê¸°
     curl_easy_setopt(
         curl,
         CURLOPT_WRITEFUNCTION,
@@ -116,7 +116,7 @@ string translateWithDeepL(const string& text, const string& targetLang, const st
     curl_slist_free_all(headers);
     curl_easy_cleanup(curl);
 
-    // JSON ÆÄ½Ì
+    // JSON íŒŒì‹±
     try {
 
         json j = json::parse(response);

@@ -1,22 +1,14 @@
-#include "giveOCR.h"
+ï»¿#include "giveOCR.h"
 #include <iostream>
 #include <string>
 
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
 
-// À§ µÎ Çì´õ°¡ ÀÎ½ÄÀÌ ¾È µÇ¸é cmd ¿¡¼­
-//
-// git clone https://github.com/microsoft/vcpkg
-// cd vcpkg
-// bootstrap-vcpkg.bat
-// vcpkg install tesseract:x64-windows
-// vcpkg integrate install
+// ìœ„ ë‘ í—¤ë”ê°€ ì¸ì‹ì´ ì•ˆ ë˜ë©´
 
-// °¢°¢ ¼ø¼­´ë·Î ½ÃÇàÇÏ¸é µË´Ï´Ù.
-
-// CppHomework À» ¿ì Å¬¸¯ ÈÄ ºôµå ÀÌº¥Æ® Ã£¾Æ¼­ ºôµå ÈÄ ÀÌº¥Æ®¿¡ ¾Æ·¡ ¸í·É¾î¸¦ ÀÔ·ÂÇÏ¸é µË´Ï´Ù.
-// xcopy /E /I /Y "$(ProjectDir)tessdata" "$(OutDir)tessdata"
+//setup.bat ë¥¼ ë”ë¸” í´ë¦­í•´ ì‹¤í–‰ í•˜ì‹­ì‹œì˜¤.
+//ì‘ì—…ì™„ë£Œê¹Œì§€ 15ë¶„ ì •ë„ ê±¸ë¦½ë‹ˆë‹¤.
 
 std::string giveOCR(const char* imagePath, const char* lang)
 {
@@ -26,7 +18,7 @@ std::string giveOCR(const char* imagePath, const char* lang)
 
     if (ocr.Init("./tessdata/", lang))
     {
-        std::cout << "OCR ÃÊ±âÈ­ ½ÇÆĞ\n";
+        std::cout << "OCR ì´ˆê¸°í™” ì‹¤íŒ¨\n";
         return "===============================";
     }
 
@@ -34,7 +26,7 @@ std::string giveOCR(const char* imagePath, const char* lang)
 
     if (!image)
     {
-        std::cout << "ÀÌ¹ÌÁö ·Îµå ½ÇÆĞ\n";
+        std::cout << "ì´ë¯¸ì§€ ë¡œë“œ ì‹¤íŒ¨\n";
         ocr.End();
         return "===============================";
     }
@@ -43,7 +35,7 @@ std::string giveOCR(const char* imagePath, const char* lang)
 
     char* text = ocr.GetUTF8Text();
 
-    std::cout << "\n===== OCR °á°ú =====\n";
+    std::cout << "\n===== OCR ê²°ê³¼ =====\n";
     std::cout << text << std::endl;
     std::cout << "====================\n";
 
