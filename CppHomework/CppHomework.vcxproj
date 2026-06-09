@@ -137,9 +137,10 @@
     <ClInclude Include="giveOCR.h" />
     <ClInclude Include="imgChap.h" />
     <ClInclude Include="imgSave.h" />
-    <ClCompile Include="tranc_run.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    <ClCompile Include="runTranc.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClInclude Include="runTranc.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />

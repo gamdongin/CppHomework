@@ -18,7 +18,7 @@ std::string giveOCR(const char* imagePath, const char* lang)
 
     if (ocr.Init("./tessdata/", lang))
     {
-        std::cout << "OCR 초기화 실패\n";
+        std::cout << u8"OCR 초기화 실패\n";
         return "===============================";
     }
 
@@ -26,7 +26,7 @@ std::string giveOCR(const char* imagePath, const char* lang)
 
     if (!image)
     {
-        std::cout << "이미지 로드 실패\n";
+        std::cout << u8"이미지 로드 실패\n";
         ocr.End();
         return "===============================";
     }
@@ -35,13 +35,14 @@ std::string giveOCR(const char* imagePath, const char* lang)
 
     char* text = ocr.GetUTF8Text();
 
-    std::cout << "\n===== OCR 결과 =====\n";
+    std::cout << u8"\n===== OCR 결과 =====\n";
     std::cout << text << std::endl;
     std::cout << "====================\n";
 
+    std::string result = text;
     delete[] text;
     pixDestroy(&image);
     ocr.End();
 
-	return text;
+	return result;
 }

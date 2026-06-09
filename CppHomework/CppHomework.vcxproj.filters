@@ -30,7 +30,7 @@
     <ClCompile Include="imgSave.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="tranc_run.cpp">
+    <ClCompile Include="runTranc.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="deepl_api.cpp">
@@ -48,6 +48,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="deepl_api.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="runTranc.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

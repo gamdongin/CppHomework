@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <gdiplus.h>
 #include <iostream>
+#include <string>
 
 #pragma comment(lib, "gdiplus.lib")
 using namespace Gdiplus;
@@ -13,7 +14,6 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
     UINT size = 0;
 
     GetImageEncodersSize(&num, &size);
-
     if (size == 0)
     {
         return -1;
@@ -21,7 +21,6 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
 
     ImageCodecInfo* pImageCodecInfo =
         (ImageCodecInfo*)malloc(size);
-
     if (pImageCodecInfo == NULL)
     {
         return -1;
@@ -32,7 +31,6 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
         size,
         pImageCodecInfo
     );
-
     for (UINT i = 0; i < num; i++)
     {
         if (wcscmp(
@@ -61,7 +59,6 @@ bool saveClipboardImage(const wchar_t* filename)
 
     HANDLE hData =
         GetClipboardData(CF_BITMAP);
-
     if (hData == NULL)
     {
         CloseClipboard();
@@ -74,7 +71,6 @@ bool saveClipboardImage(const wchar_t* filename)
     Bitmap bitmap(hBitmap, NULL);
 
     CLSID pngClsid;
-
     if (GetEncoderClsid(
         L"image/png",
         &pngClsid
@@ -90,7 +86,6 @@ bool saveClipboardImage(const wchar_t* filename)
             &pngClsid,
             NULL
         );
-
     CloseClipboard();
 
     return status == Ok;
@@ -98,10 +93,12 @@ bool saveClipboardImage(const wchar_t* filename)
 
 bool startScreenCaptureAndSave(const wchar_t* filename)
 {
+    std::string dummy;
+
     startScreenClip();
 
-    std::cout << "캡쳐할 영역을 선택한 뒤 Enter를 누르세요.\n";
-    std::cin.get();
+    std::cout << u8"캡쳐할 영역을 선택한 뒤 Enter를 누르세요.\n";
+    std::getline(std::cin, dummy);
 
     return saveClipboardImage(filename);
 }

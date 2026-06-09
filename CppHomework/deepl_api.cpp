@@ -1,4 +1,5 @@
 ﻿// deepl_api.cpp
+// deelp 모듈
 
 #include "deepl_api.h"
 
