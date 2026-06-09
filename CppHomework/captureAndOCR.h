@@ -2,4 +2,4 @@
 #include <string>
 using namespace std;
 
-string runTranc(const string& deeplAPI);
+string captureAndOCR(const string& lang);

@@ -5,14 +5,12 @@ using namespace std;
 #include <limits>
 #include <gdiplus.h>
 
-#include "imgSave.h"
-#include "giveOCR.h"
-
+#include "captureAndOCR.h"
 #include "deepl_api.h"
 
 #pragma comment(lib, "gdiplus.lib")
 
-string runTranc(string deeplAPI)
+string runTranc(const string& deeplAPI)
 {
     int choice;
     string lang;
@@ -55,23 +53,8 @@ string runTranc(string deeplAPI)
             cin >> choice;
             cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
             if (choice == 1) {
-                cout << u8"캡쳐를 시작합니다..\n";
 
-                const wchar_t* savePathW = L"capture.png";
-                const char* savePath = "capture.png";
-
-                cout << u8"캡쳐 버튼 실행 중...\n";
-
-                if (!startScreenCaptureAndSave(savePathW))
-                {
-                    cout << u8"캡쳐 이미지 저장 실패\n";
-                    continue;
-                }
-
-                cout << u8"캡쳐 이미지 저장 완료\n";
-
-                // OCR 결과
-                text = giveOCR(savePath, lang.c_str());
+                text = captureAndOCR(lang);
 
                 if (text.empty())
                 {

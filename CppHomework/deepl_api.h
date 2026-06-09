@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include <string>
+using namespace std;
 
-std::string translateWithDeepL(
-    const std::string& text,
-    const std::string& targetLang,
-    const std::string API_KEY = "HERE_API_KEY"
+string translateWithDeepL(
+    const string& text,
+    const string& targetLang,
+    const string& API_KEY
 );

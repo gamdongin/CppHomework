@@ -27,7 +27,11 @@ static size_t WriteCallback(
     return size * nmemb;
 }
 
-string translateWithDeepL(const string& text, const string& targetLang, const string API_KEY) {
+string translateWithDeepL(
+    const string& text,
+    const string& targetLang,
+    const string& API_KEY
+) {
 
     CURL* curl = curl_easy_init();
 

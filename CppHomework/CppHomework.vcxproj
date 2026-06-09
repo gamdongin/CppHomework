@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="captureAndOCR.cpp" />
     <ClCompile Include="deepl_api.cpp" />
     <ClCompile Include="giveOCR.cpp" />
     <ClCompile Include="imgChap.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="captureAndOCR.h" />
     <ClInclude Include="deepl_api.h" />
     <ClInclude Include="giveOCR.h" />
     <ClInclude Include="imgChap.h" />
