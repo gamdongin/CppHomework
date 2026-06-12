@@ -1,13 +1,15 @@
-﻿#include "imgChap.h"
-#include "imgSave.h"
-#include <windows.h>
+﻿#include <windows.h>
 #include <gdiplus.h>
 #include <iostream>
 #include <string>
 
+#include "imgChap.h"
+#include "imgSave.h"
+
 #pragma comment(lib, "gdiplus.lib")
 using namespace Gdiplus;
 
+// GDI+에서 PNG로 저장하는 방법을 찾는 함수 // 내부 보조용
 int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
 {
     UINT num = 0;
@@ -50,6 +52,7 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
     return -1;
 }
 
+// 클립보드에서 CF_BITMAP 이미지를 꺼냄
 bool saveClipboardImage(const wchar_t* filename)
 {
     if (!OpenClipboard(NULL))

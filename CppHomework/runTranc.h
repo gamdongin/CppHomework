@@ -1,5 +1,4 @@
 #pragma once
 #include <string>
-using namespace std;
 
-string runTranc(const string& deeplAPI);
+std::string runTranc(std::string firstDeeplAPI);
