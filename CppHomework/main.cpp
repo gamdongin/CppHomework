@@ -1,5 +1,6 @@
 ﻿#include <iostream>
-#include "runTranc.h"
+#include "MainMenu.h"
+#include "textCache.h"
 using namespace std;
 
 #include <windows.h>
@@ -25,7 +26,10 @@ int main() {
     cin >> firstDeeplAPI;
     cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 
-    runTranc(firstDeeplAPI);
+    initializeCache();
+    MainMenu mainmenu;
+    mainmenu.firstSetting(firstDeeplAPI);
+    mainmenu.run();
  //  =   =   =   =   =   =   =   =   =   =   =   =   =   =
     Gdiplus::GdiplusShutdown(gdiplusToken);
 

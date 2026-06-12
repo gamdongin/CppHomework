@@ -134,7 +134,9 @@
     <ClCompile Include="imgChap.cpp" />
     <ClCompile Include="imgSave.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="textCache.cpp" />
     <ClCompile Include="TranslateMenu.cpp" />
+    <ClCompile Include="windowControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApiMenu.h" />
@@ -146,13 +148,11 @@
     <ClInclude Include="imgSave.h" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="OcrMenu.cpp" />
-    <ClCompile Include="runTranc.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="OcrMenu.h" />
-    <ClInclude Include="runTranc.h" />
+    <ClInclude Include="textCache.h" />
     <ClInclude Include="TranslateMenu.h" />
+    <ClInclude Include="windowControl.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />

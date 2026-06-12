@@ -96,12 +96,21 @@ bool saveClipboardImage(const wchar_t* filename)
 
 bool startScreenCaptureAndSave(const wchar_t* filename)
 {
-    std::string dummy;
-
+    DWORD beforeClipboard = GetClipboardSequenceNumber();
     startScreenClip();
+    std::cout << u8"캡쳐할 영역을 선택하세요.\n";
 
-    std::cout << u8"캡쳐할 영역을 선택한 뒤 Enter를 누르세요.\n";
-    std::getline(std::cin, dummy);
+    int waitCount = 0;
+    while (GetClipboardSequenceNumber() == beforeClipboard)
+    {
+        Sleep(100);
+        waitCount++;
+        if (waitCount >= 100)
+        {
+            std::cout << u8"캡쳐 시간이 초과되었습니다.\n";
+            return false;
+        }
+    }
 
     return saveClipboardImage(filename);
 }

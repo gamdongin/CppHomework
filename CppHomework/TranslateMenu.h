@@ -7,5 +7,5 @@ class TranslateMenu : public BaseMenu
 private:
     void show() override;
     int executeChoice(int choice) override;
-    void runTranc();
+    void startTranslation();
 };
