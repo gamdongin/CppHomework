@@ -30,9 +30,6 @@
     <ClCompile Include="imgSave.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="runTranc.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="deepl_api.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -54,6 +51,15 @@
     <ClCompile Include="TranslateMenu.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="textCache.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="windowControl.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="gui_main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgChap.h">
@@ -66,9 +72,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="deepl_api.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="runTranc.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="captureAndOCR.h">
@@ -87,6 +90,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="TranslateMenu.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="textCache.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="windowControl.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

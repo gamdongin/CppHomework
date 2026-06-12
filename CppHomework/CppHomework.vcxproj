@@ -104,7 +104,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
@@ -131,9 +131,12 @@
     <ClCompile Include="captureAndOCR.cpp" />
     <ClCompile Include="deepl_api.cpp" />
     <ClCompile Include="giveOCR.cpp" />
+    <ClCompile Include="gui_main.cpp" />
     <ClCompile Include="imgChap.cpp" />
     <ClCompile Include="imgSave.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="textCache.cpp" />
     <ClCompile Include="TranslateMenu.cpp" />
     <ClCompile Include="windowControl.cpp" />
